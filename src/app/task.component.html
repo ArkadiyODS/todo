@@ -1,0 +1,19 @@
+<li>
+    <input class="checkBox" type="checkbox"
+      (change)="onChecked($event.target.checked)"
+      [checked]="task.status">
+    <span *ngIf="!task.rename"
+      [class.crossed]="task.status"
+      (click)="onRename()"
+    > {{task.title}}</span>
+    <div  *ngIf="task.rename">
+    <input
+      [value]="task.title" 
+      (change)="rename($event.target.value)" autofocus>
+      <div>
+      <button name="save" (click)="toSubmit($event.target.name)">Save</button>
+      <button  name="cancel" (click)="toSubmit($event.target.name)">Cancel</button>
+      <button name="delete" (click)="toSubmit($event.target.name)">Delete</button>
+      </div> 
+    </div>
+</li>

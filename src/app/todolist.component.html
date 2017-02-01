@@ -1,0 +1,11 @@
+<h1>{{name}}</h1>
+<hr>
+<td-add-task (addTask)="onTaskAdded($event)"></td-add-task>
+<hr>
+<ul>
+  <td-task *ngFor='let task of taskList'
+  [task] = "task"
+  (change) = "onChange($event)" 
+  (delete) = "onDelete($event)">   
+  </td-task>
+</ul>  
