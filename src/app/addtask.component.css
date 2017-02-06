@@ -33,3 +33,6 @@ button{
 button:focus{
     outline: 0;
 }
+button:disabled {
+    background:lightslategray;
+}

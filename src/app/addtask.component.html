@@ -2,6 +2,6 @@
 #taskAddForm="ngForm"
 (ngSubmit)="onSubmit(taskAddForm.value)">
     <label for="title">New task: </label>
-    <input class="taskInput" type="text" name="title" ngModel>
-    <button type="submit">Add</button >
+    <input (input)="inputChange($event)" class="taskInput" type="text" name="title" ngModel>
+    <button disabled="{{disabled}}" type="submit">Add</button >
 </form>

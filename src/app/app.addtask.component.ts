@@ -10,6 +10,12 @@ import { Task, State } from './TaskDataService';
 export class AddTaskComponent{
     @Output() addTask = new EventEmitter();
 
+    inputChange(e){ 
+        this.disabled = e.target.value.trim() === '' ? true : null ;
+    }
+
+    disabled:boolean = true;
+
     onSubmit(input:any ){   
         if(input.title.trim() != '')
             this.addTask.emit({title: input.title, status: State.New});        
